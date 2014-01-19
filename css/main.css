@@ -3,6 +3,10 @@
    ========================================================================== */
 
 .jumbotron {
+    background: url(/img/escheresque_ste.png) repeat 0 0;
+}
+
+body {
     background: url(/img/binding_dark.png) repeat 0 0;
 }
 
