@@ -10,6 +10,10 @@ body {
     background: url(/img/binding_dark.png) repeat 0 0;
 }
 
+.panel-primary {
+    border: none;
+}
+
 
 
 
