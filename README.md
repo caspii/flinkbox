@@ -3,8 +3,11 @@ Simple local HTTP s#erver:
 $python -m SimpleHTTPServer
 
 # TODOS ##
+* Changed AddThis profile
 * Favicon
 * Contact form
 * Coming soon solution
-* Tool 1
-* tool 2
+* First tools
+** BMI
+** Numbers conversion
+** 
