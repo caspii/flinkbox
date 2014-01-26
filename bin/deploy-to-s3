@@ -1,0 +1,14 @@
+#! /bin/bash
+# Script to copy files to Amazon S3
+#
+# sudo apt-get install s3cmd
+# Credential file: /home/$USER/.s3cfg
+# Credential file created via:  s3cmd --configure
+
+# Sync to bucket
+SOURCE=../
+TARGET=s3://flinkbox.de
+s3cmd -v --progress sync \
+  —exclude '.git/*' \
+  —exclude '.idea/*' \
+  $SOURCE $TARGET
