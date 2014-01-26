@@ -3,11 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Caspar Wrede -- Master of Everything -- @wrede
 
 # TECHNOLOGY COLOPHON
 
