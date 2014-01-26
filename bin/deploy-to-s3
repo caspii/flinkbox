@@ -6,9 +6,10 @@
 # Credential file created via:  s3cmd --configure
 
 # Sync to bucket
-SOURCE=../
+SOURCE=.
 TARGET=s3://flinkbox.de
+cd ..
 s3cmd -v --progress sync \
-  —exclude '.git/*' \
-  —exclude '.idea/*' \
+  --exclude '.git/*' \
+  --exclude '.idea/*' \
   $SOURCE $TARGET
