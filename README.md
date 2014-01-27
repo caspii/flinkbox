@@ -3,11 +3,19 @@ Simple local HTTP s#erver:
 $python -m SimpleHTTPServer
 
 # TODOS ##
-* Change AddThis profile
-* Favicon
 * Contact solution
 * Coming soon solution
+* Add Metadata (for Addthis)
 * First tools
 ** BMI
 ** Numbers conversion
-** Percentage
+** Percentage calculation
+** What's my IP address?
+* Tweak CSS
+** Text bigger
+** Links white
+* Enable Compression
+* Add Anal Events
+* Add linkt to casparwre.de
+* Provide link to MOMB
+* Change AndroidPIT link
