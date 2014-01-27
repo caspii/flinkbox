@@ -14,6 +14,12 @@ body {
     border: none;
 }
 
+/* Hide spinner on number inputs */
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 
 
