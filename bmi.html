@@ -22,8 +22,6 @@
         }
     </style>
     <link rel="stylesheet" href="css/main.css">
-
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
@@ -40,11 +38,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><i class="fa fa-magic"></i> Flinkbox</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-magic"></i> Flinkbox</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
                 <li><a href="/about.html">Impressum</a></li>
                 <li><a href="/about.html">Contact</a></li>
             </ul>
@@ -60,50 +58,113 @@ Begin main content
 -->
 <div class="jumbotron">
     <div class="container">
-        <h1><i class="fa fa-magic"></i> Flinkbox</h1>
-
-        <p> Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy. </p>
-
+        <h2>Body-Mass Index berechnen</h2>
     </div>
 </div>
 
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6 col-md-offset-2">
-            <h2>Body-Mass Index Berechnen</h2>
-            <p>Hier können sie schnell und bequem ihren Body-Mass-Index, auch gennannt BMI, berechnen</p>
-
-
-
-
+        <div class="col-md-12">
+            <p>Hier kannst Du schnell und bequem Deinen Body-Mass-Index, auch gennannt BMI, berechnen</p>
+            <p>Mit deinem  BMI kannst du feststellen, ob Du Übergewicht, Untergewicht oder Idealgewicht hast. Einfach
+                deine Daten unten eitragen und auf "Los" klicken</p>
+            <br>
         </div>
     </div>
 
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" id="bmi-form">
+        <!--- Weight -->
         <div class="form-group">
-            <label for="inputEmail3" class="col-md-offset-2 col-sm-2 control-label">Gewicht</label>
-            <div class="col-sm-4">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <label for="weight" class="col-sm-2 control-label">Dein Gewicht</label>
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="weight" minlength="2" placeholder="" required>
+                    <span class="input-group-addon">KG</span>
+                </div>
             </div>
         </div>
+        <!--- Height -->
         <div class="form-group">
-            <label for="inputPassword3" class="col-md-offset-2 col-sm-2 control-label">Größe</label>
-            <div class="col-sm-4">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <label for="height" class="col-sm-2 control-label">Deine Größe</label>
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input type="number" class="form-control" id="height" placeholder="">
+                    <span class="input-group-addon">cm</span>
+                </div>
+            </div>
+        </div>
+        <!--- Age -->
+        <div class="form-group">
+            <label for="age" class="col-sm-2 control-label">Deine Alter</label>
+            <div class="col-sm-3">
+               <input type="number" class="form-control" id="age" placeholder="">
+            </div>
+        </div>
+        <!--- Sex -->
+        <div class="form-group">
+            <label for="sex" class="col-sm-2 control-label">Dein Geschlecht</label>
+            <div class="col-sm-3">
+                <div class="btn-group" data-toggle="buttons" id="sex">
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="options" id="female"> Weiblich
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="options" id="male"> Männlich
+                    </label>
+
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-4 col-sm-10">
-                <button type="submit" class="btn btn-primary">Los</button>
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="calculate" class="btn btn-success btn-lg">Los!</button>
             </div>
         </div>
     </form>
 
+    <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Modal overlays
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <div class="modal fade" id="bmi-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
-
+    <div class="modal fade" id="bmi-error">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-danger">Fehler</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Du mußt alle Felder ausfüllen!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
     <!-- End main content -->
@@ -115,7 +176,7 @@ Begin main content
     -->
     <hr>
     <footer>
-        <p>&copy; Flinkbox 2013
+        <p>&copy; Flinkbox 2014
             <!-- AddThis Button BEGIN -->
         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
             <a class="addthis_button_preferred_1"></a>
@@ -136,10 +197,11 @@ Begin main content
 <!-- /container -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="js/bmi.js"></script>
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
