@@ -1,9 +1,6 @@
 $( document ).ready(function() {
 
     $("#calculate").click(calculate);
-    jQuery.extend(jQuery.validator.messages, {
-        required: 'Du musst hier was eintragen'
-    });
 });
 
 function calculate() {

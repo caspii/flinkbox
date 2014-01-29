@@ -1,5 +1,5 @@
 ## Tools ##
-Simple local HTTP s#erver:
+Simple local HTTP server:
 $python -m SimpleHTTPServer
 
 # TODOS ##
@@ -19,3 +19,4 @@ $python -m SimpleHTTPServer
 * Add linkt to casparwre.de
 * Provide link to MOMB
 * Change AndroidPIT link
+* Link Kittysplit to Casparwre.de

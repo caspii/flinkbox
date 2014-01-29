@@ -89,7 +89,7 @@ Begin main content
             <label for="height" class="col-sm-2 control-label">Deine Größe</label>
             <div class="col-sm-3">
                 <div class="input-group">
-                    <input type="number" class="form-control" id="height" placeholder="">
+                    <input type="number" class="form-control" id="height" minlength="2" placeholder="" required>
                     <span class="input-group-addon">cm</span>
                 </div>
             </div>
@@ -98,7 +98,7 @@ Begin main content
         <div class="form-group">
             <label for="age" class="col-sm-2 control-label">Deine Alter</label>
             <div class="col-sm-3">
-               <input type="number" class="form-control" id="age" placeholder="">
+               <input type="number" class="form-control" id="age" placeholder="" required>
             </div>
         </div>
         <!--- Sex -->
@@ -200,6 +200,7 @@ Begin main content
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/messages_de.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/bmi.js"></script>
 
