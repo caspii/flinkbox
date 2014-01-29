@@ -30,13 +30,14 @@ function validateForm() {
 
 }
 function calculate() {
-    var data = {};
-    data.sex = $("#sex .active").data("value");
-    data.weight =  $('#weight').val();
-    data.height = $('#height').val();
-    data.age = $('#age').val()
-
-    console.log('data = ' + data.toString())
+    var sex = $("#sex .active").data("value");
+    var weight =  $('#weight').val();
+    var height = $('#height').val() / 100; // Required in m
+    var age = $('#age').val()
+    var bmi = (weight/(height*height)).toFixed(2);
+    console.log('bmi = ' + bmi);
+    $("#bmi-value").text(bmi);
+    $("#bmi-modal").modal();
     return false;
 }
 
