@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
-    $("#calculate").click(calculate);
+    $("#calculate").click(validateForm);
 });
 
-function calculate() {
+function validateForm() {
     console.log('Doing it');
     // Validate first
     $('#bmi-form').validate(
@@ -17,6 +17,7 @@ function calculate() {
             },
             errorElement: 'span',
             errorClass: 'help-block',
+            submitHandler: calculate,
             errorPlacement: function(error, element) {
                 if(element.parent('.input-group').length) {
                     error.insertAfter(element.parent());
@@ -26,5 +27,16 @@ function calculate() {
             }
         }
     )
+
+}
+function calculate() {
+    var data = {};
+    data.sex = $("#sex .active").data("value");
+    data.weight =  $('#weight').val();
+    data.height = $('#height').val();
+    data.age = $('#age').val()
+
+    console.log('data = ' + data.toString())
+    return false;
 }
 
