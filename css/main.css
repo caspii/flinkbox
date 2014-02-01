@@ -32,6 +32,10 @@ form input[type='number']::-webkit-inner-spin-button {
     height:500px;
 }
 
+/*Disabled elements on main page*/
+div.list-group-item{
+    color:lightsteelblue;
+}
 
 
 
