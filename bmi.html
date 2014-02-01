@@ -64,15 +64,6 @@ Begin main content
 
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-12">
-            <p>Hier kannst Du schnell und bequem Deinen Body-Mass-Index, auch gennannt BMI, berechnen</p>
-            <p>Mit deinem  BMI kannst du feststellen, ob Du Übergewicht, Untergewicht oder Idealgewicht hast. Einfach
-                deine Daten unten eitragen und auf "Los" klicken</p>
-            <br>
-        </div>
-    </div>
-
     <form class="form-horizontal" role="form" id="bmi-form">
         <!--- Weight -->
         <div class="form-group">
@@ -124,9 +115,121 @@ Begin main content
         </div>
     </form>
 
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Über diesen BMI Rechner</h2>
+            <p>Hier kannst Du schnell und bequem Deinen Body-Mass-Index, auch gennannt BMI, berechnen</p>
+            <p>Mit deinem  BMI kannst du feststellen, ob Du Übergewicht, Untergewicht oder Idealgewicht hast. Einfach
+                deine Daten eintragen und auf "Los" klicken</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 ">
+            <h2>Auswertung des BMI Wertes</h2>
+            <p>Werte von normalgewichtigen Personen liegen gemäß der Adipositas-Klassifikation der
+                <a href="http://de.wikipedia.org/wiki/Weltgesundheitsorganisation" title="Weltgesundheitsorganisation">
+                    Weltgesundheitsorganisation</a> zwischen 18,5 und 24,99, ab einer BMI von 30 gelten übergewichtige
+                Personen als behandlungsbedürftig.</p>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>BMI für Männer</th>
+                    <th>BMI für Männer</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="warning">
+                    <td>Untergewicht</td>
+                    <td>Unter 20</td>
+                    <td>Unter 19</td>
+
+                </tr>
+                <tr class="success">
+                    <td>Idealgewicht</td>
+                    <td>20-25</td>
+                    <td>19-24</td>
+
+                </tr>
+                <tr class="warning">
+                    <td>Übergewicht</td>
+                    <td>26-30</td>
+                    <td>25-30</td>
+
+                </tr>
+                <tr class="danger">
+                    <td>Adipositas</td>
+                    <td>26-30</td>
+                    <td>25-30</td>
+
+                </tr>
+                <tr class="danger">
+                    <td>starke Adipositas</td>
+                    <td>26-30</td>
+                    <td>25-30</td>
+
+                </tr>
+
+
+
+                </tbody>
+            </table>
+            <p>Wenn du übergewicht oder untergewicht hast, solltest du dich von einem Artzt beraten lassen</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <h2>Auswertung des BWI-Wertes nach Alter</h2>
+            <p>Der idale BMI Wert variert mit zunehmendem Alter.</p>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Alter</th>
+                    <th>optimaler BMI</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>19-24</td>
+                    <td>19-24</td>
+                </tr>
+                <tr>
+                    <td>25-34</td>
+                    <td>20-25</td>
+                </tr>
+                <tr>
+                    <td>35-44</td>
+                    <td>21-26</td>
+                </tr>
+                <tr>
+                    <td>45-54</td>
+                    <td>22-27</td>
+                </tr>
+                <tr>
+                    <td>55-64</td>
+                    <td>23-28</td>
+                </tr>
+                <tr>
+                    <td>älter als 65</td>
+                    <td>24-29</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
     <!--
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    Modal overlays
+    Modal overlay
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     -->
 
@@ -135,14 +238,16 @@ Begin main content
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Your Body Mass Index</h4>
+                    <h4 class="modal-title">Ergebnis</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Dein BMI beträgt: <span class="label label-primary" id="bmi-value">#</span></p>
-                    <div class="alert alert-info">Whoop! Du hast ein Normal Gewicht</div>
+                    <p class="well well-lg" >Dein BMI beträgt: <strong id="bmi-value" class="">#</strong></p>
 
-
-
+                    <div id="underweight" class="weight alert alert-warning" >Das bedeudet, du hast Untergewicht</div>
+                    <div id="normalweight" class="weight alert alert-success" >Das bedeudet, du hast Idealgewicht</div>
+                    <div id="slightlyoverweight" class="weight alert alert-warning" >Das bedeudet, du hast Übergewicht</div>
+                    <div id="veryoverweight" class="weight alert alert-danger" >Das bedeudet, du hast starkes Übergewicht (adipositas)</div>
+                    <div id="maxoverweight" class="weight alert alert-danger" >Das bedeudet, du hast sehr starkes Übergewicht (Starke adipositas)</div>
 
                 </div>
                 <div class="modal-footer">

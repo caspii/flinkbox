@@ -4,7 +4,6 @@ $( document ).ready(function() {
 });
 
 function validateForm() {
-    console.log('Doing it');
     // Validate first
     $('#bmi-form').validate(
         // Setup validator
@@ -35,8 +34,39 @@ function calculate() {
     var height = $('#height').val() / 100; // Required in m
     var age = $('#age').val()
     var bmi = (weight/(height*height)).toFixed(2);
-    console.log('bmi = ' + bmi);
     $("#bmi-value").text(bmi);
+    $(".weight").hide();
+    if (sex == "male") {
+        if (bmi < 20) {
+            $("#underweight").show()
+        } else if (bmi > 20 && bmi < 25) {
+            $("#normalweight").show()
+        } else if (bmi > 25 && bmi < 30) {
+            $("#slightlyoverweight").show()
+        } else if (bmi > 30 && bmi < 40 ) {
+            $("#veryoverweight").show()
+        } else  {
+            $("#maxoverweight").show()
+        }
+    } else {
+        if (bmi < 19) {
+            $("#underweight").show()
+        } else if (bmi > 19 && bmi < 24) {
+            $("#normalweight").show()
+        } else if (bmi > 24 && bmi < 30) {
+            $("#slightlyoverweight").show()
+        } else if (bmi > 30 && bmi < 40 ) {
+            $("#veryoverweight").show()
+        } else  {
+            $("#maxoverweight").show()
+        }
+
+    }
+
+
+
+
+
     $("#bmi-modal").modal();
     return false;
 }

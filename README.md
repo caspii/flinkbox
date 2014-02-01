@@ -8,6 +8,7 @@ $python -m SimpleHTTPServer
 * Add Metadata (for Addthis)
 * First tools
 ** BMI
+** Allow AddThis sharing of BMI results
 ** Numbers conversion
 ** Percentage calculation
 ** What's my IP address?
