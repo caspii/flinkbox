@@ -38,11 +38,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><i class="fa fa-magic"></i> Flinkbox</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-magic"></i> Flinkbox</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
                 <li><a href="/about.html">Impressum</a></li>
                 <li><a href="/about.html">Contact</a></li>
             </ul>
@@ -58,84 +58,43 @@ Begin main content
 -->
 <div class="jumbotron">
     <div class="container">
-        <h1><i class="fa fa-magic"></i> Flinkbox</h1>
-
-        <p> Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy. </p>
-
+        <h2>IP Adressen und co.</h2>
     </div>
 </div>
 
 <div class="container">
-    <!-- Row /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-clock-o"></i> Datumstools</div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">» Zeit umrechnung</a>
-                    <a href="#" class="list-group-item">» Zeitdifferenz berechnen</a>
-                </div>
-            </div>
+        <div class="col-md-8">
+            <h2>Wie lautet meine IP Adresse?</h2>
+            <div class="well"> Deine IP Addresse lautet: <span class="strong "id="ip-address">#</span></div>
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Welchem Ort ist meine IP Adresse zugeordnet?</h2>
+            <p>Hier kannst Du sehen, ob dein VPN oder Proxy funktioniert</p>
+            <!--Maps widget goes below -->
+            <div id="map-canvas"  ></div>
+            <br/>
+            <br/>
         </div>
 
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-star"></i> Lottotools</div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">» Lottozahlen Generator</a>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-table"></i> Prozentrechnung</div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">» Wieviel Prozent sind das</a>
-
-                </div>
-            </div>
-        </div>
 
     </div>
-    <!-- Row /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class = 'row'>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-gear"></i> Webtools</div>
-                <div class="list-group">
-                    <a href="/ip.html" class="list-group-item">» Wie lautet meine IP Adresse</a>
-                    <a href="#" class="list-group-item">» Passwort Generator</a>
 
-                </div>
-            </div>
+
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <a href="/"> <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button></a>
         </div>
-
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-leaf"></i> Körper und Geundheit</div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">» Blut Alkohol Rechner</a>
-                    <a href="/bmi.html" class="list-group-item">» Body Mass Index ausrechnen</a>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-plus-square"></i> Zahlenbasis-Umrechnung</div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">» Binär-Hex-Dezimal Umrechnung</a>
-                    <a href="#" class="list-group-item">» Römische Zahlen</a>
-
-                </div>
-            </div>
-        </div>
-
     </div>
+
+
+
     <!-- End main content -->
 
     <!--
@@ -167,10 +126,14 @@ Begin main content
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
 <script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/messages_de.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="js/ip.js"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM0nWitwhmKnR-dcTLqnqgZef0oD7it08&sensor=false">
+</script>
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

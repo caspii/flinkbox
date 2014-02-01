@@ -26,6 +26,11 @@ form input[type='number']::-webkit-inner-spin-button {
     top: 20%;
 }
 
+/*Ensure that maps widget is being shown correctly*/
+#map-canvas {
+    width:100%;
+    height:500px;
+}
 
 
 
