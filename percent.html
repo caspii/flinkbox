@@ -38,11 +38,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><i class="fa fa-magic"></i> Flinkbox</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-magic"></i> Flinkbox</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
                 <li><a href="/about.html">Impressum</a></li>
                 <li><a href="/about.html">Contact</a></li>
             </ul>
@@ -58,84 +58,36 @@ Begin main content
 -->
 <div class="jumbotron">
     <div class="container">
-        <h1><i class="fa fa-magic"></i> Flinkbox</h1>
-
-        <p> Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy. </p>
-
+        <h2>Prozentrechnung, ganz einfach</h2>
     </div>
 </div>
 
 <div class="container">
-    <!-- Row /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-clock-o"></i> Datumstools</div>
-                <div class="list-group">
-                    <div class="list-group-item">» Zeit umrechnung (in arbeit)</div>
-                    <div class="list-group-item">» Zeitdifferenz berechnen (in arbeit)</div>
-                </div>
-            </div>
+        <div class="col-md-4 top-buffer">
+            Wieviel sind
+            <input class="form-control percent-input" id="percent1" placeholder="3" style="width: 50px">
+            % von <input class="form-control percent-input" id="percent2" placeholder="200"> ?
+
         </div>
 
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-star"></i> Lottotools </div>
-                <div class="list-group">
-                    <div class="list-group-item">» Lottozahlen Generator (in arbeit)</div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-table"></i> Prozentrechnung</div>
-                <div class="list-group">
-                    <a href="percent.html" class="list-group-item">» Wieviel Prozent sind das?</a>
-
-                </div>
-            </div>
+        <div class="col-md-4 top-buffer">
+            <input class="form-control percent-input" id="result" placeholder="Ergebnis" disabled>
+            <button type="submit" class="btn btn-primary" id="calc">Berechnen</button>
         </div>
 
     </div>
-    <!-- Row /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class = 'row'>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-gear"></i> Webtools</div>
-                <div class="list-group">
-                    <a href="/ip.html" class="list-group-item">» Wie lautet meine IP Adresse?</a>
-                    <div class="list-group-item">» Passwort Generator (in arbeit)</div>
 
-                </div>
-            </div>
+
+    <br/><br/><br/>
+    <div class="row">
+        <div class="col-md-6 ">
+            <a href="/"> <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button></a>
         </div>
-
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-leaf"></i> Körper und Geundheit</div>
-                <div class="list-group">
-                    <a href="/bmi.html" class="list-group-item">» Body Mass Index ausrechnen</a>
-                    <div href="#" class="list-group-item">» Blut Alkohol Rechner (in arbeit)</div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading h4"> <i class="fa fa-plus-square"></i> Zahlenbasis-Umrechnung</div>
-                <div class="list-group">
-                    <div href="#" class="list-group-item">» Binär-Hex-Dezimal Umrechnung (in arbeit)</div>
-                    <div href="#" class="list-group-item">» Römische Zahlen (in arbeit)</div>
-
-                </div>
-            </div>
-        </div>
-
     </div>
+
+
     <!-- End main content -->
 
     <!--
@@ -167,10 +119,11 @@ Begin main content
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
 <script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/messages_de.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="js/bmi.js"></script>
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -184,3 +137,5 @@ Begin main content
 </script>
 </body>
 </html>
+
+
