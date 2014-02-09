@@ -16,12 +16,14 @@ $ lessc less/bootstrap.less > css/bootstrap.min.css
 
 # TODOS ##
 * Add Metadata (for Addthis)
-* Next tools
-** Numbers conversion
+* Create tools
 ** Percentage calculation
+** 3-way Rabattrechner
+** Tip-Rechner
+** Numbers conversion
+** Password creation
 * Allow AddThis sharing of BMI results
 * Tweak CSS
-** Text bigger
 ** Links white
 * Enable Compression
 * Add Anal Events
