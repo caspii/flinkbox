@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
     $("#calculate").click(validateForm);
 });
 
@@ -26,8 +25,8 @@ function validateForm() {
             }
         }
     )
-
 }
+
 function calculate() {
     var sex = $("#sex .active").data("value");
     var weight =  $('#weight').val();
@@ -60,13 +59,7 @@ function calculate() {
         } else  {
             $("#maxoverweight").show()
         }
-
     }
-
-
-
-
-
     $("#bmi-modal").modal();
     return false;
 }
