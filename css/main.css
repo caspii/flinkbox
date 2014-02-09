@@ -3,11 +3,11 @@
    ========================================================================== */
 
 .jumbotron {
-    background: url(/img/ricepaper2.png) repeat 0 0;
+    background: url(/img/low_contrast_linen.png) repeat 0 0;
 }
 
 body {
-    /*background: url(/img/binding_dark.png) repeat 0 0;*/
+    /*background: url(/img/low_contrast_linen.png) repeat 0 0;*/
 }
 
 .panel-primary {
