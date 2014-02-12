@@ -1,21 +1,14 @@
 $( document ).ready(function() {
-
     $("#calc1").click(calc1);
     $("#calc2").click(calc2);
     $("#calc3").click(calc3);
-
 });
 
-
-function val1() {
-    validateForm();
-}
 
 function calc1(){
     var p1 = getValue("#p11");
     var p2 = getValue("#p12");
     var result=((p1/100)*p2).toFixed(2);
-    console.log(result)
 
     $("#result1").val(parseFloat(result)); // ParseFloat trims zeros
     $("#result1").animateHighlight("#FFFF00", 1000);
@@ -23,12 +16,22 @@ function calc1(){
 }
 
 function calc2(){
-    console.log("calc2")
+    var p1 = getValue("#p21");
+    var p2 = getValue("#p22");
+    var result=((p1/p2)*100).toFixed(2);
+
+    $("#result2").val(parseFloat(result)  + " %"); // ParseFloat trims zeros
+    $("#result2").animateHighlight("#FFFF00", 1000);
     return false;
 }
 
 function calc3(){
-    console.log("calc3")
+    var p1 = getValue("#p31");
+    var p2 = getValue("#p32");
+    var result=((p1*100)/p2).toFixed(2);
+
+    $("#result3").val(parseFloat(result)); // ParseFloat trims zeros
+    $("#result3").animateHighlight("#FFFF00", 1000);
     return false;
 }
 
