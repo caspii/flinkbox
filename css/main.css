@@ -44,6 +44,11 @@ div.list-group-item{
 
 .top-buffer { margin-top:20px; }
 
+/*Ensure that numbers are visible in disabled text inputs*/
+.form-control {
+    color: #000000;
+}
+
 
 
 
