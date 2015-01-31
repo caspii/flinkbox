@@ -155,13 +155,68 @@ Begin main content
 </div>
 <!-- /container -->
 <script src="js/vendor/jquery-1.10.1.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/jquery.color-2.1.2.min.js"></script>
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/flinkbox.js"></script>
 
-<script src="js/vendor/jquery.validate.min.js"></script>
-<script src="js/vendor/jquery.color-2.1.2.min.js"></script>
-<script src="js/vendor/messages_de.js"></script>
-<script src="js/perc1.js"></script>
+<script>
+$(function() {
+  addValidation();
+
+    $("#calc1").click(calc1);
+    $("#calc2").click(calc2);
+    $("#calc3").click(calc3);
+
+  function calc1(){
+    var p1 = getValue("#p11");
+    var p2 = getValue("#p12");
+    var result=((p1/100)*p2).toFixed(2);
+
+    $("#result1").val(parseFloat(result)); // ParseFloat trims zeros
+    $("#result1").animateHighlight("#FFFF00", 1000);
+    return false;
+  }
+
+  function calc2(){
+    var p1 = getValue("#p21");
+    var p2 = getValue("#p22");
+    var result=((p1/p2)*100).toFixed(2);
+
+    $("#result2").val(parseFloat(result)  + " %"); // ParseFloat trims zeros
+    $("#result2").animateHighlight("#FFFF00", 1000);
+    return false;
+  }
+
+  function calc3(){
+    var p1 = getValue("#p31");
+    var p2 = getValue("#p32");
+    var result=((p1*100)/p2).toFixed(2);
+
+    $("#result3").val(parseFloat(result)); // ParseFloat trims zeros
+    $("#result3").animateHighlight("#FFFF00", 1000);
+    return false;
+  }
+
+  function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+  /**
+  * Returns value of input or placeholder value
+  * @param id
+  */
+  function getValue(id) {
+    var val = $(id).val();
+    if (val == "") {
+      val = $(id).attr('placeholder');
+    }
+    return val;
+  }
+
+
+});
+</script>
 </body>
 </html>

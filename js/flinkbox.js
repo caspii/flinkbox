@@ -33,3 +33,41 @@ ga('send', 'pageview');
   }
 }());
 */
+
+function addValidation(){
+  /*
+  * Translated default messages for the jQuery validation plugin.
+  * Locale: DE (German, Deutsch)
+  */
+  (function ($) {
+    $.extend($.validator.messages, {
+      required: "Dieses Feld ist ein Pflichtfeld.",
+      maxlength: $.validator.format("Geben Sie bitte maximal {0} Zeichen ein."),
+      minlength: $.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
+      rangelength: $.validator.format("Geben Sie bitte mindestens {0} und maximal {1} Zeichen ein."),
+      email: "Geben Sie bitte eine gültige E-Mail Adresse ein.",
+      url: "Geben Sie bitte eine gültige URL ein.",
+      date: "Bitte geben Sie ein gültiges Datum ein.",
+      number: "Geben Sie bitte eine Nummer ein.",
+      digits: "Geben Sie bitte nur Ziffern ein.",
+      equalTo: "Bitte denselben Wert wiederholen.",
+      range: $.validator.format("Geben Sie bitte einen Wert zwischen {0} und {1} ein."),
+      max: $.validator.format("Geben Sie bitte einen Wert kleiner oder gleich {0} ein."),
+      min: $.validator.format("Geben Sie bitte einen Wert größer oder gleich {0} ein."),
+      creditcard: "Geben Sie bitte eine gültige Kreditkarten-Nummer ein."
+    });
+  }(jQuery));
+}
+
+
+/**
+* Extend JQuery method with animation function (Uses Color Plugin)
+* @param highlightColor
+* @param duration
+*/
+$.fn.animateHighlight = function(highlightColor, duration) {
+  var highlightBg = highlightColor || "#FFFF9C";
+  var animateMs = duration || 1500;
+  var originalBg = "#adafae" // Original background of input
+  this.stop().css("background-color", highlightBg).animate({backgroundColor: originalBg}, animateMs);
+};

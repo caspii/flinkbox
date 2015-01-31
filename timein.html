@@ -137,22 +137,21 @@
     </div>
     <!-- /container -->
     <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/flinkbox.js"></script>
-    
-    <script src="js/vendor/jquery.validate.min.js"></script>
-    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
-    <script src="js/vendor/messages_de.js"></script>
+
     <script src="js/vendor/moment.min.js"></script>
     <script>
     $(function() {
 
       $( "#calc1" ).click(function() {
         // validation needed..
-        $("#rHour").val(timeInHour());
-        $("#rMin").val(timeInMin());
-        $("#rSec").val(timeInSec());
+        $("#rHour").val(timeInHour()).animateHighlight("#FFFF00", 1000);
+        $("#rMin").val(timeInMin()).animateHighlight("#FFFF00", 1000);
+        $("#rSec").val(timeInSec()).animateHighlight("#FFFF00", 1000);
       });
 
     function timeInHour(){
