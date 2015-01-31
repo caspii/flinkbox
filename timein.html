@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flinkbox</title>
+  <meta name="description" content="Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy.">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+  body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  </style>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+  improve your experience.</p>
+  <![endif]-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><i class="fa fa-magic"></i> Flinkbox</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">Impressum</a></li>
+          <li><a href="about.html">Contact</a></li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+
+  <!--
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Begin main content
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="jumbotron">
+  <div class="container">
+    <h2><i class="fa fa-table"></i>
+      Zeitrechnung, ganz einfach</h2>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Zeitumrechnung</h1>
+        <!--
+        <p>Wieviel Prozent sind X von Y?<p>
+        -->
+          <p>Einfach die Werte unten eintragen und auf "berechnen" klicken.
+            Die Beispielwerte kannst du überschreiben</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <hr>
+          <div class="col-md-4 top-buffer">
+            <!--
+            <input type="number" class="form-control percent-input text-center" id="d1year" placeholder="2014" value="2014" style="width: 60px">
+            <input type="number" class="form-control percent-input text-center" id="d1month" placeholder="10" value="10" style="width: 60px">
+            <input type="number" class="form-control percent-input text-center" id="d1day" placeholder="30" value="30" style="width: 60px">
+            -->
+
+            <input type="number" class="form-control percent-input text-center" id="d1hour" placeholder="12" value="12" style="width: 60px"> Stunden<br/>
+            <input type="number" class="form-control percent-input text-center" id="d1min" placeholder="12" value="12" style="width: 60px"> Minuten<br/>
+            <input type="number" class="form-control percent-input text-center" id="d1sec" placeholder="12" value="12" style="width: 60px"> Sekunden<br/>
+            <br/><br/>
+            <button type="submit" class="btn btn-primary" id="calc1">Berechnen</button>
+          </div>
+
+          <div class="col-md-4 top-buffer">
+            <input class="form-control percent-input text-center" id="rHour" placeholder="Ergebnis" disabled> Stunden<br/>
+            <input class="form-control percent-input text-center" id="rMin" placeholder="Ergebnis" disabled> Minuten<br/>
+            <input class="form-control percent-input text-center" id="rSec" placeholder="Ergebnis" disabled> Sekunden<br/>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 ">
+            <a href="index.html">
+              <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- End main content -->
+        <!--
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Footer
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      -->
+      <footer>
+        <hr>
+        <p>&copy; Flinkbox 2014
+          <!-- AddThis Button BEGIN -->
+
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+          <script type="text/javascript"
+          src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52de372a1f82abf8"></script>
+          <!-- AddThis Button END -->
+        </p>
+      </footer>
+
+
+    </div>
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/messages_de.js"></script>
+    <script src="js/vendor/moment.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script>
+    $(function() {
+
+      $( "#calc1" ).click(function() {
+        // validation needed..
+        $("#rHour").val(timeInHour());
+        $("#rMin").val(timeInMin());
+        $("#rSec").val(timeInSec());
+      });
+
+    function timeInHour(){
+    var s = 0;
+    d1hour  = parseFloat($("#d1hour").val(),10);
+    d1min   = parseFloat($("#d1min").val(),10);
+    d1sec   = parseFloat($("#d1sec").val(),10);
+
+    var s = d1hour + (d1min/60) + (d1sec/3600);
+    return s;
+    }
+
+    function timeInMin(){
+      var s = 0;
+      d1hour  = parseInt($("#d1hour").val(),10);
+      d1min   = parseInt($("#d1min").val(),10);
+      d1sec   = parseInt($("#d1sec").val(),10);
+
+      var s = (d1hour * 60) + d1min + (d1sec/60);
+      return s;
+    }
+
+
+    function timeInSec(){
+      var s = 0;
+      d1hour  = parseInt($("#d1hour").val(),10);
+      d1min   = parseInt($("#d1min").val(),10);
+      d1sec   = parseInt($("#d1sec").val(),10);
+
+      var s = (d1hour * 60 * 60) + (d1min * 60) + d1sec;
+      return s;
+    }
+
+
+
+  });
+
+    // GOOGLE ANALYTICS
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47294774-1', 'flinkbox.de');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+  </html>
