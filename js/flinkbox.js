@@ -1,6 +1,7 @@
 // LOADING
 
 $(function() {
+  $(".navbar").load("navbar.html");
   $("footer").load("addthis.html");
 });
 
