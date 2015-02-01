@@ -47,20 +47,18 @@ Begin main content
             <br>
         </div>
     </div>
-
+<!--
     <div class="row">
         <div class="col-md-8">
             <h2>Welchem Ort ist meine IP Adresse zugeordnet?</h2>
             <p>Hier kannst Du sehen, ob dein VPN oder Proxy funktioniert</p>
-            <!--Maps widget goes below -->
+
             <div id="map-canvas"  ></div>
             <br/>
             <br/>
         </div>
-
-
     </div>
-
+  -->
 
 
     <div class="row">
@@ -91,28 +89,28 @@ Begin main content
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/flinkbox.js"></script>
-
+<!--
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM0nWitwhmKnR-dcTLqnqgZef0oD7it08&sensor=false">
 </script>
-
+-->
 <script>
 $(function() {
-  addValidation();
+//  addValidation();
+//  var myLatlng;
 
-
-    var myLatlng;
-
-
-    $.getJSON( "http://smart-ip.net/geoip-json?callback=?",
-    function(data){
-      $("#ip-address").text(data.host);
-      myLatlng = new google.maps.LatLng(data.latitude,data.longitude);
+$.getJSON( "http://api.bnz-power.com/ip",
+  function(data){
+    $("#ip-address").text(data.ip);
+    //myLatlng = new google.maps.LatLng(data.latitude,data.longitude);
     }
   );
 
+/*
 
-  function initialize() {
+/// Actually no service to use
+
+function initialize() {
     var mapOptions = {
       center: myLatlng,
       disableDefaultUI: true,
@@ -138,7 +136,7 @@ $(function() {
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 
-
+*/
 
 });
 </script>
