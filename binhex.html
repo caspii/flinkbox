@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flinkbox</title>
+  <meta name="description" content="Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy.">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+  improve your experience.</p>
+  <![endif]-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  </div>
+
+  <!--
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Begin main content
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="jumbotron">
+  <div class="container">
+    <h2><i class="fa fa-table"></i>
+      Binär-Hex-Dezimal Umrechnung</h2>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Binär-Hex-Dezimal Umrechnung</h1>
+            <p>Binär<br/>Hex<br/>Dezimal</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <hr>
+          <div class="col-md-8 top-buffer">
+            <input class="form-control percent-input text-center" id="Dec2Bin" placeholder="22" value="22" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rDec2Bin" placeholder="Ergebnis" style="width: 120px" disabled> Dezimal -> Binär<br/>
+            <input class="form-control percent-input text-center" id="Dec2Hex" placeholder="42" value="42" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rDec2Hex" placeholder="Ergebnis" style="width: 120px" disabled> Dezimal -> Hex<br/>
+
+            <input class="form-control percent-input text-center" id="Bin2Dec" placeholder="111" value="111" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rBin2Dec" placeholder="Ergebnis" style="width: 120px" disabled> Binär -> Dezimal<br/>
+            <input class="form-control percent-input text-center" id="Bin2Hex" placeholder="11111000" value="11111000" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rBin2Hex" placeholder="Ergebnis" style="width: 120px" disabled> Binär -> Hex<br/>
+
+            <input class="form-control percent-input text-center" id="Hex2Bin" placeholder="f8" value="f8" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rHex2Bin" placeholder="Ergebnis" style="width: 120px" disabled> Hex -> Binär<br/>
+            <input class="form-control percent-input text-center" id="Hex2Dec" placeholder="2a" value="2a" style="width: 120px">
+            <input class="form-control percent-input text-center" id="rHex2Dec" placeholder="Ergebnis" style="width: 120px" disabled> Hex -> Dezimal<br/>
+            <br/><br/>
+            <button type="submit" class="btn btn-primary" id="calc1">Berechne neue Zahlen</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 ">
+            <a href="index.html">
+              <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- End main content -->
+        <!--
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Footer
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      -->
+      <footer>
+      </footer>
+
+
+    </div>
+    <!-- /container -->
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/flinkbox.js"></script>
+
+    <script>
+    $(function() {
+
+      $( "#calc1" ).click(function() {
+        $("#rDec2Bin").val(Dec2Bin(parseInt($("#Dec2Bin").val()))).animateHighlight("#FFFF00", 1000);
+        $("#rDec2Hex").val(Dec2Hex(parseInt($("#Dec2Hex").val()))).animateHighlight("#FFFF00", 1000);
+
+        $("#rBin2Dec").val(Bin2Dec(parseInt($("#Bin2Dec").val()))).animateHighlight("#FFFF00", 1000);
+        $("#rBin2Hex").val(Bin2Hex(parseInt($("#Bin2Hex").val()))).animateHighlight("#FFFF00", 1000);
+
+        $("#rHex2Bin").val(Hex2Bin($("#Hex2Bin").val())).animateHighlight("#FFFF00", 1000);
+        $("#rHex2Dec").val(Hex2Dec($("#Hex2Dec").val())).animateHighlight("#FFFF00", 1000);
+      });
+
+    });
+
+    //Useful Functions
+    function checkBin(n){return/^[01]{1,64}$/.test(n)}
+    function checkDec(n){return/^[0-9]{1,64}$/.test(n)}
+    function checkHex(n){return/^[0-9A-Fa-f]{1,64}$/.test(n)}
+    function pad(s,z){s=""+s;return s.length<z?pad("0"+s,z):s}
+    function unpad(s){s=""+s;return s.replace(/^0+/,'')}
+
+    //Decimal operations
+    function Dec2Bin(n){if(!checkDec(n)||n<0)return 0;return n.toString(2)}
+    function Dec2Hex(n){if(!checkDec(n)||n<0)return 0;return n.toString(16)}
+
+    //Binary Operations
+    function Bin2Dec(n){if(!checkBin(n))return 0;return parseInt(n,2).toString(10)}
+    function Bin2Hex(n){if(!checkBin(n))return 0;return parseInt(n,2).toString(16)}
+
+    //Hexadecimal Operations
+    function Hex2Bin(n){if(!checkHex(n))return 0;return parseInt(n,16).toString(2)}
+    function Hex2Dec(n){if(!checkHex(n))return 0;return parseInt(n,16).toString(10)}
+
+    /*
+    * Usage example:
+    * bin2dec('111'); // '7'
+    * dec2hex('42'); // '2a'
+    * hex2bin('f8'); // '11111000'
+    * dec2bin('22'); // '10110'
+
+
+    console.log(Bin2Dec(111));
+    console.log(Hex2Bin('f8'));
+    console.log(Dec2Hex(42));
+    console.log(Dec2Bin(22));
+
+
+    7
+    binhex.html:116 11111000
+    binhex.html:117 2a
+    binhex.html:118 10110
+    */
+
+  </script>
+  </body>
+  </html>
