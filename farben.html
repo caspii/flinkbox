@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Flinkbox</title>
+    <meta name="description" content="Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy.">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+</div>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Begin main content
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="jumbotron">
+    <div class="container">
+        <h2>RGB Farb Generator</h2>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>RGB FARBE</h2>
+            <br/>
+            <input type="number" class="form-control percent-input text-center" id="r" placeholder="255" value="255" style="width: 60px">
+            <input type="number" class="form-control percent-input text-center" id="g" placeholder="255" value="255" style="width: 60px">
+            <input type="number" class="form-control percent-input text-center" id="b" placeholder="0"   value="0" style="width: 60px">
+            <br/>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4 rgb">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6 ">
+            <a href="index.html"> <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button></a>
+        </div>
+    </div>
+
+    <!-- End main content -->
+
+    <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Footer
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <footer>
+    </footer>
+
+
+</div>
+<!-- /container -->
+<script src="js/vendor/jquery-1.10.1.min.js"></script>
+<script src="js/vendor/jquery.validate.min.js"></script>
+<script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/flinkbox.js"></script>
+
+<script src="js/vendor/password-gen.min.js"></script>
+<script>
+$(function() {
+
+  // validation needed (0-255)
+  // add pallets function, complemantary, etc
+
+  $( ".percent-input" ).change(function() {
+    $(".rgb").css("background-color", "rgb(" + parseInt($("#r").val()) + "," + parseInt($("#g").val()) + "," + parseInt($("#b").val()) + ")");
+  });
+
+  $( ".percent-input" ).change();
+});
+</script>
+</body>
+</html>
