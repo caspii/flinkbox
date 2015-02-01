@@ -84,30 +84,28 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/flinkbox.js"></script>
 
-    <script src="js/vendor/moment.min.js"></script>
     <script>
     $(function() {
 
       $( "#calc1" ).click(function() {
-        // validation needed..
         $("#rLotto649").val(lotto649()).animateHighlight("#FFFF00", 1000);
       });
 
-
+    });
     function FillArray(n){
-    var numbersArr = [];
-    for ( var i = 1; i < n; i++ ) {
-      numbersArr.push(i);
-    }
-    return numbersArr;
+      var numbersArr = [];
+      for ( var i = 1; i < n; i++ ) {
+        numbersArr.push(i);
+      }
+      return numbersArr;
     }
 
     function lotto649(){
-    test = FillArray(50);
-    test = shuffle(test);
-    test = test.slice(0,6);
-    test = test.toString();
-    return test;
+      test = FillArray(50);
+      test = shuffle(test);
+      test = test.slice(0,6);
+      test = test.toString();
+      return test;
     }
 
     function shuffle(array) {
@@ -128,9 +126,6 @@
 
       return array;
     }
-
-
-  });
   </script>
   </body>
   </html>
