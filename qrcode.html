@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flinkbox</title>
+  <meta name="description" content="Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy.">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+  improve your experience.</p>
+  <![endif]-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  </div>
+
+  <!--
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Begin main content
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="jumbotron">
+  <div class="container">
+    <h2><i class="fa fa-table"></i>
+      QR-Code Generator</h2>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>QR-Code Erstellung - super, einfach</h1>
+        <!--
+        <p>Wieviel Prozent sind X von Y?<p>
+
+          <p>Einfach die Werte unten eintragen und auf "berechnen" klicken.
+            Die Beispielwerte kannst du überschreiben</p>
+          -->
+          </div>
+        </div>
+
+        <div class="row">
+          <hr>
+          <div class="col-md-4 top-buffer">
+            <input type="text" class="form-control percent-input text-center" id="qrdata" placeholder="Example Text" value="Example Text" style="width: 260px"><br/>
+            <br/><br/>
+            <button type="submit" class="btn btn-primary" id="calc1">Erstelle QR-Code</button>
+          </div>
+
+          <div class="col-md-4 top-buffer qrcode">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 ">
+            <a href="index.html">
+              <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- End main content -->
+        <!--
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Footer
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      -->
+      <footer>
+      </footer>
+
+
+    </div>
+    <!-- /container -->
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/flinkbox.js"></script>
+
+    <script src="js/vendor/moment.min.js"></script>
+    <script>
+    $(function() {
+
+      $( "#calc1" ).click(function() {
+        // validation needed..
+        fetchAndShow($("#qrdata").val());
+      });
+
+    function fetchAndShow(qrdata){
+      console.log(qrdata);
+
+      baseurl = "http://api.bnz-power.com/qr/";
+      $.getJSON( baseurl + qrdata)
+      .done(function( json ) {
+        $(".qrcode").empty().append("<img src='" +  json.qrurl + "'/>");
+      })
+      .fail(function( jqxhr, textStatus, error ) {
+        var err = textStatus + ", " + error;
+        console.log( "Request Failed: " + err );
+      });
+    }
+
+
+  });
+  </script>
+  </body>
+  </html>
