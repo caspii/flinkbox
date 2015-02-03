@@ -1,7 +1,6 @@
 ## Tools ##
 This is the code for http://flinkbox.de
 
-
 Simple local HTTP server:
 $ python -m SimpleHTTPServer
 
@@ -20,15 +19,11 @@ $ lessc less/bootstrap.less > css/bootstrap.min.css
 # TODOS ##
 * Add Metadata (for Addthis)
 * Create tools
-** Percentage calculation
-** 3-way Rabattrechner
-** Tip-Rechner
-** Numbers conversion
-** Password creation
-* Allow AddThis sharing of BMI results
-* Tweak CSS
-** Links white
-* Enable Compression
+    * 3-way Rabattrechner
+    * Tip-Rechner
+    * Numbers conversion
+    * Password creation
+* Allow social sharing of BMI results
+* Enable Compression for Amazon
 * Add Anal Events
-* Provide link to MOMB
-
+* Spread links elsewhere
