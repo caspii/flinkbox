@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flinkbox</title>
+  <meta name="description" content="Alle online Tools, die Du brauchst. Optimiert für Desktop und Handy.">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+  improve your experience.</p>
+  <![endif]-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  </div>
+
+  <!--
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Begin main content
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="jumbotron">
+  <div class="container">
+    <h2><i class="fa fa-table"></i>
+      Römische Zahlschrift</h2>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Römische Zahlschrift erstellen</h1>
+            <p>Natürliche Zahlen -> Römische Zahlschrift</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <hr>
+          <div class="col-md-8 top-buffer">
+            <input class="form-control percent-input text-center" id="dezimal" placeholder="4" value="5" style="width: 200px"> Natürliche Zahl<br/>
+            <input class="form-control percent-input text-center" id="roman" placeholder="Ergebnis" style="width: 200px" disabled> Römische Zahlschrift<br/>
+            <br/><br/>
+            <button type="submit" class="btn btn-primary" id="calc1">Erstelle Römische Zahl</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 ">
+            <a href="index.html">
+              <button class="btn btn-success btn-lg">» Zu allen Flinkbox Tools</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- End main content -->
+        <!--
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Footer
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      -->
+      <footer>
+      </footer>
+
+
+    </div>
+    <!-- /container -->
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.color-2.1.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/flinkbox.js"></script>
+
+    <script>
+    $(function() {
+
+      $( "#calc1" ).click(function() {
+        $("#roman").val(romanize($("#dezimal").val())).animateHighlight("#FFFF00", 1000);
+      });
+
+    });
+
+    /*
+    Source:
+    http://stackoverflow.com/questions/9083037/convert-a-number-into-a-roman-numeral-in-javascript
+    */
+    function romanize(num) {
+      if (!+num)
+        return false;
+        var digits = String(+num).split(""),
+        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+        "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+        "","I","II","III","IV","V","VI","VII","VIII","IX"],
+        roman = "",
+        i = 3;
+        while (i--)
+          roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+          return Array(+digits.join("") + 1).join("M") + roman;
+        }
+  </script>
+  </body>
+  </html>
