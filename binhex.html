@@ -51,20 +51,20 @@
         <div class="row">
           <hr>
           <div class="col-md-8 top-buffer">
-            <input class="form-control percent-input text-center" id="Dec2Bin" placeholder="22" value="22" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rDec2Bin" placeholder="Ergebnis" style="width: 120px" disabled> Dezimal -> Binär<br/>
-            <input class="form-control percent-input text-center" id="Dec2Hex" placeholder="42" value="42" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rDec2Hex" placeholder="Ergebnis" style="width: 120px" disabled> Dezimal -> Hex<br/>
+            <input class="form-control percent-input text-center input120" id="Dec2Bin" placeholder="22" value="22">
+            <input class="form-control percent-input text-center input120" id="rDec2Bin" placeholder="Ergebnis" disabled> Dezimal -> Binär<br/>
+            <input class="form-control percent-input text-center input120" id="Dec2Hex" placeholder="42" value="42">
+            <input class="form-control percent-input text-center input120" id="rDec2Hex" placeholder="Ergebnis" disabled> Dezimal -> Hex<br/>
 
-            <input class="form-control percent-input text-center" id="Bin2Dec" placeholder="111" value="111" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rBin2Dec" placeholder="Ergebnis" style="width: 120px" disabled> Binär -> Dezimal<br/>
-            <input class="form-control percent-input text-center" id="Bin2Hex" placeholder="11111000" value="11111000" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rBin2Hex" placeholder="Ergebnis" style="width: 120px" disabled> Binär -> Hex<br/>
+            <input class="form-control percent-input text-center input120" id="Bin2Dec" placeholder="111" value="111">
+            <input class="form-control percent-input text-center input120" id="rBin2Dec" placeholder="Ergebnis" disabled> Binär -> Dezimal<br/>
+            <input class="form-control percent-input text-center input120" id="Bin2Hex" placeholder="11111000" value="11111000">
+            <input class="form-control percent-input text-center input120" id="rBin2Hex" placeholder="Ergebnis" disabled> Binär -> Hex<br/>
 
-            <input class="form-control percent-input text-center" id="Hex2Bin" placeholder="f8" value="f8" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rHex2Bin" placeholder="Ergebnis" style="width: 120px" disabled> Hex -> Binär<br/>
-            <input class="form-control percent-input text-center" id="Hex2Dec" placeholder="2a" value="2a" style="width: 120px">
-            <input class="form-control percent-input text-center" id="rHex2Dec" placeholder="Ergebnis" style="width: 120px" disabled> Hex -> Dezimal<br/>
+            <input class="form-control percent-input text-center input120" id="Hex2Bin" placeholder="f8" value="f8">
+            <input class="form-control percent-input text-center input120" id="rHex2Bin" placeholder="Ergebnis" disabled> Hex -> Binär<br/>
+            <input class="form-control percent-input text-center input120" id="Hex2Dec" placeholder="2a" value="2a">
+            <input class="form-control percent-input text-center input120" id="rHex2Dec" placeholder="Ergebnis" disabled> Hex -> Dezimal<br/>
             <br/><br/>
             <button type="submit" class="btn btn-primary" id="calc1">Berechne neue Zahlen</button>
           </div>
@@ -131,27 +131,6 @@
     //Hexadecimal Operations
     function Hex2Bin(n){if(!checkHex(n))return 0;return parseInt(n,16).toString(2)}
     function Hex2Dec(n){if(!checkHex(n))return 0;return parseInt(n,16).toString(10)}
-
-    /*
-    * Usage example:
-    * bin2dec('111'); // '7'
-    * dec2hex('42'); // '2a'
-    * hex2bin('f8'); // '11111000'
-    * dec2bin('22'); // '10110'
-
-
-    console.log(Bin2Dec(111));
-    console.log(Hex2Bin('f8'));
-    console.log(Dec2Hex(42));
-    console.log(Dec2Bin(22));
-
-
-    7
-    binhex.html:116 11111000
-    binhex.html:117 2a
-    binhex.html:118 10110
-    */
-
   </script>
   </body>
   </html>
