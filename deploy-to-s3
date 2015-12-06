@@ -8,7 +8,6 @@
 # Sync to bucket
 SOURCE=.
 TARGET=s3://flinkbox.de
-cd ..
 s3cmd -v --progress sync \
   --exclude '.git/*' \
   --exclude '.idea/*' \
